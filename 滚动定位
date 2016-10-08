@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.top{
+			height:100px;
+			background: #f00;
+		}
+		.mean{
+			width:1200px;
+			margin:0 auto;
+		}
+		.left{
+			width:200px;
+			float: left;
+			background: #ccc;
+			height:300px;
+		}
+		.right{
+			width:980px;
+			float: right;
+			background: #ff0;
+			height:2000px;
+		}
+	</style>
+	<script type="text/javascript" src="http://192.168.100.28:21201/flowdis/assets/lib/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(window).scroll(function(){
+			var Height = $(".top").height();
+			var top = document.body.scrollTop;
+			//console.log(Height);
+			//console.log(top);
+			 if(top > Height){
+			 	$(".left").css({"position":"fixed","top":"0"});
+			 }else{
+			 	$(".left").css({"position":"relative","top":"0"});
+			 }
+		});
+
+或者
+$(document).ready(function(){
+          var fixNav = function() {
+            var Height = $(".top").height();
+            var top = document.body.scrollTop;
+            //console.log(Height);
+            //console.log(top);
+            if(top > Height){
+               $(".left").css({"position":"fixed","top":"0"});
+            }else{
+               $(".left").css({"position":"relative","top":"0"});
+            }
+          }
+            $(window).scroll(function(){
+                fixNav();
+            })
+        });
+	</script>
+
+</head>
+<body>
+	<div class="top"></div>
+	<div class="mean">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>
