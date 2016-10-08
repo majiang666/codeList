@@ -1,0 +1,7 @@
+setInterval(function(){
+    if($("#ticket_240000K1171A td").eq(9).hasClass("yes")){
+       $(".btn72").click();
+    }else{
+      $("#query_ticket").click();  
+    }
+},3000);
