@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	    $(document).ready(function(){
+	        // 多选
+	        var abc = $(".add_mssage dl dd");
+	        $(abc).click(function(){
+	            if($(this).hasClass('mse_cur')){
+	                $(this).removeClass('mse_cur');
+	            }else{
+	                $(this).addClass('mse_cur');
+	            };
+	        });
+	        // 删除
+	        $(".add_mssage dl dd img").click(function(){
+	            $(this).parent().remove();
+	        });
+	    });
+	</script>
+  
+  // 多选
+  var abc = $(".add_mssage dl dd");
+  $(abc).click(function(){
+      if($(this).hasClass('mse_cur')){
+          $(this).removeClass('mse_cur').siblings().removeClass("mse_cur");
+      }else{
+          $(this).addClass('mse_cur').siblings().removeClass("mse_cur");
+      };
+  });
