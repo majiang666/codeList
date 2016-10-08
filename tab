@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".orderTab_title li").click(function(){
+			$(this).addClass("cur").siblings().removeClass("cur");//标题切换
+			var li_index=$(this).attr("index");
+			var divArray=$(this).parent().parent().next().children();
+			$.each(divArray,function(){
+				if($(this).attr("index")==li_index)
+				{
+					$(this).show();
+				}else
+				{
+					$(this).hide();
+				}
+			});
+
+		});
+	});
+</script>
